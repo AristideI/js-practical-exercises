@@ -1,1 +1,3 @@
-const addNumber = (exp) => eval(exp)
+function addNumbers(str) {
+    let pro = str.split("")
+}

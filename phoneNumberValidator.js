@@ -1,5 +1,5 @@
 function phoneNumberValidator(str) {
-    if(str.length == 10){
+    if(str.length == 10 && str.includes("-") == false && str.includes(" ") == false){
         return true
     }
     

@@ -10,5 +10,5 @@ function countingZeros(min, max) {
         }
     }
     
-    return items.lenght
+    return items.length
 }
