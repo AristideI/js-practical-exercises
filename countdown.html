@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-cyan-800 text-white pt-12">
+
+    <h1 class="text-center font-bold text-5xl">Counter</h1>
+
+    <p class="counter text-center my-24 font-bold text-9xl">10</p>
+
+    <section class="flex justify-center gap-20">
+        <button class="one bg-cyan-500 rounded-lg px-12 py-2 grid place-content-center font-medium">+5s</button>
+        <button class="two bg-cyan-500 rounded-lg px-12 py-2 grid place-content-center font-medium">+10s</button>
+        <button class="three bg-cyan-500 rounded-lg px-12 py-2 grid place-content-center font-medium">+15s</button>
+    </section>
+
+
+
+    <script>
+
+        let counter = document.querySelector(".counter")
+        let but1 = document.querySelector(".one")
+        let but2 = document.querySelector(".two")
+        let but3 = document.querySelector(".three")
+
+        let countValue = 10
+
+
+
+        let counting = setInterval(function () {
+            if (countValue === 0) {
+                stop()
+                but1.style.display = "none"
+                but2.style.display = "none"
+                but3.style.display = "none"
+            }
+            else {
+
+                countValue--
+            }
+            counter.textContent = countValue
+
+
+        }, 1000)
+
+        function stop() {
+            clearInterval(counting)
+        }
+
+
+
+
+
+        but1.addEventListener("click", function () {
+            countValue += 5
+        })
+        but2.addEventListener("click", function () {
+            countValue += 10
+        })
+        but3.addEventListener("click", function () {
+            countValue += 15
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
