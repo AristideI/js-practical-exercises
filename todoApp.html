@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-400">
+
+    <article class="w-4/5 mx-auto flex flex-col justify-center gap-12  my-12">
+        <section class="flex justify-between gap-8">
+            <input class="todoo w-full py-2 px-4 border-[1px] border-orange-300" value="The saint" type="text">
+            <button class="bg-green-300 px-12 py-2 add">Add</button>
+        </section>
+
+        <p class="text-3xl font-bold">ToDos</p>
+
+        <section>
+            <ul>
+                <!-- <li class="flex justify-end gap-20 items-center border-black border-[1px] py-1 px-4">
+                    <p>sgsfghkjlkjshfdgkjshlk</p>
+                    <button class="bg-red-400 px-8 py-1 remove">Remove</button>
+                </li> -->
+
+            </ul>
+        </section>
+    </article>
+
+
+
+    <script>
+        let todoo = document.querySelector(".todoo")
+        let ul = document.querySelector("ul")
+        let add = document.querySelector(".add")
+
+        todoo.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                let li = document.createElement("li")
+                let p = document.createElement("p")
+                let remobeButtom = document.createElement("button")
+                p.textContent = todoo.value
+                li.setAttribute("class", "flex justify-end gap-20 items-center border-black border-[1px] py-1 px-4 my-2")
+                remobeButtom.textContent = "Remove"
+                remobeButtom.setAttribute("class", "bg-red-400 px-8 py-1 remove")
+
+                remobeButtom.addEventListener("click", function () {
+                    remobeButtom.parentElement.remove()
+                })
+                li.append(p)
+                li.append(remobeButtom)
+                ul.append(li)
+                todoo.value = ""
+            }
+        })
+
+
+        add.addEventListener("click", function () {
+            let li = document.createElement("li")
+            let p = document.createElement("p")
+            let remobeButtom = document.createElement("button")
+            p.textContent = todoo.value
+            li.setAttribute("class", "flex justify-end gap-20 items-center border-black border-[1px] py-1 px-4 my-2 line-through")
+            remobeButtom.textContent = "Remove"
+            remobeButtom.setAttribute("class", "bg-red-400 px-8 py-1 remove")
+
+            remobeButtom.addEventListener("click", function () {
+                remobeButtom.parentElement.remove()
+            })
+            li.append(p)
+            li.append(remobeButtom)
+            ul.append(li)
+            todoo.value = ""
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
